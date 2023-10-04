@@ -3,13 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Socket Client</title>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+
+
+
 </head>
 <body>
-<h1>HELLO CLASS</h1>
-<H5> area of the triangle </H5>
-<input>
-    <script>apps.js </script>
-    <script type="module" src="./app.js"></script>
+    <div id="messages"></div>
+    <input type="text" id="message" />
+    <button id="send">Send</button>
+
+    <script>
+        const socket = io();
+
+        socket.on("connect", ()=>{
+            console.log("connected");
+        });
+        
+        socket.on("chat message", (message)=>{
+
+            const span = document.createElement("p");
+            span.textContent = message;
+
+            document.querySelector("#messages").appendChild(span);
+        });
+
+        document.querySelector("#send").addEventListener("click", ()=>{
+            const msg = document.querySelector("#message").value;
+
+            
+            socket.emit("chat message", msg);
+        });
+
+
+    </script>   
 </body>
+
+
 </html>
