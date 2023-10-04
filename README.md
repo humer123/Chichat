@@ -1,10 +1,10 @@
 # Chichat
 group member
-Javy
-Jehu
-Jonathan
-Zhen
-Keth
-Joan
-Ryan
-Humer
+Homer Godinez.
+Joan Labao.
+Javy Macabudbud.
+Jonathan Loberanes.
+Jehu Laña.
+Keth Elden Mondejar.
+Ryan Mitchell Tamosa.
+
